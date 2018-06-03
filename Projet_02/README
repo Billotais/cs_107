@@ -1,0 +1,44 @@
+Fichier Readme de Loïs Bilat et Nicolas Jeitziner
+
+- Ajout de méthodes : 
+
+public Direction move(Direction[] choices, Vector2D target) : (Classe Predator)
+
+Cette méthode a été ajoutée dans la classe Predator. Elle est utilisée par chacun des prédateurs.
+De base, chaque prédateur définissait sa cible dans sa méthode move, puis se dirigeait vers elle.
+Cette deuxième partie étant assez longue, nous l'avons mise dans la classe Predator de manière à pouvoir
+éviter la redondance du code. Elle prend comme paramètre un Vector2D appelé target, qui définit la position
+que le prédateur va fixer
+
+private void addIntersection(Vector2D pos, Direction prevDir) : (Classe SpaceInvader)
+
+Cette méthode sert simplement à éviter la redondance du code.
+Nous avons aussi ajouté dans la plupart des classes un constructeur de copie, qui est utilisé par la méthode copy()
+
+----------------------------------------------------------------------------------------------------------------------
+
+- Pacman : 
+
+Nous avons rendu le pacman plus intelligent que demandé. En effet, il va analyser son environnement pour trouver
+le prédateur le plus proche, et il va essayer de s'éloigner le plus possible de celui-ci. De plus, il est capable,
+lorsqu'un qu'un danger imminent apparaît à moins de deux cases de sa position, de faire demi-tour.
+
+- Bear : 
+
+Nous avons codé la classe Bear pour le bonus
+
+- Clyde : 
+
+Nous avons codé la classe Bear pour le bonus
+
+- Space Invader : 
+
+Nous avons donné à Space Invader la possibilité de se rappeller du chemin de la sortie lorsqu'on lui fait recommencer
+un labyrinthe. La première fois, il utilise l'algorithme du signe pour sortir. A chaque pas qu'il fait il va
+enregistrer dans une liste dans quelle direction il a pris. Si il repasse au même endroit, il va modifier cette direction.
+Quand il refera le labyrithe, il n'aura plus qu'a regarder à chaque case quelle est la dernière direction prise. Ce système
+permet de se diriger vers la sorte dans repasser dans les impasses. En effet, si on va dans une impasse, en y ressortant
+on va modifier la diretion empuntée a ce carrefour. Il n'y aura aucun moyen de se rendre dans le cul.de.sac, étant donné que
+nous étions partis dans une autre direction.
+
+
